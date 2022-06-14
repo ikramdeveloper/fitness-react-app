@@ -6,6 +6,11 @@ import { useAppContext } from "../contexts/AppContext";
 const BodyPart = ({ item }) => {
   const { bodyPart, setBodyPart } = useAppContext();
 
+  const handleClick = () => {
+    setBodyPart(item);
+    window.scrollTo({ top: 1200, left: 100, behavior: "smooth" });
+  };
+
   return (
     <Stack
       type="button"
@@ -21,10 +26,7 @@ const BodyPart = ({ item }) => {
         cursor: "pointer",
         gap: "47px",
       }}
-      onClick={() => {
-        setBodyPart(item);
-        window.scrollTo({ top: 1200, left: 100, behavior: "smooth" });
-      }}
+      onClick={handleClick}
     >
       <img src={Icon} alt="gym" style={{ width: "40px", height: "40px" }} />
 
